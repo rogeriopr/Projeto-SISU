@@ -2,24 +2,24 @@
 Autores: Leonardo Utida - 628182
          Rodolfo Asbahr - 628042
          Tiago Marto    - 628522
-         Túlio Reis     - 628050
+         TÃºlio Reis     - 628050
 
 --- CHANGELOG
 - 0.1 - estrutura de dados inicial, primitiva e rascunhada
 - 0.2 - retirada da tUniversidade
-- 0.3 - remoção de valores irrelevantes para as funções básicas (presentes na versão 0.2)
-- 0.4 - inserção dos menus enumerados
-- 0.5 - inserção dos protótipos de funções de leitura
-- 0.6 - inserção dos protótipos de funções de validação e de busca
-- 0.7 - tipo enumerado como parâmetro
+- 0.3 - remoÃ§Ã£o de valores irrelevantes para as funÃ§Ãµes bÃ¡sicas (presentes na versÃ£o 0.2)
+- 0.4 - inserÃ§Ã£o dos menus enumerados
+- 0.5 - inserÃ§Ã£o dos protÃ³tipos de funÃ§Ãµes de leitura
+- 0.6 - inserÃ§Ã£o dos protÃ³tipos de funÃ§Ãµes de validaÃ§Ã£o e de busca
+- 0.7 - tipo enumerado como parÃ¢metro
 */
 
 #include <stdio.h>
-#define MAX_NOME 64     // Todos os chars que caracterizam nomes tem no máximo 64 caracteres
-#define MAX_VETOR 128   // Os vetores principais manipulados no código tem no máximo 128 posições
+#define MAX_NOME 64     // Todos os chars que caracterizam nomes tem no mÃ¡ximo 64 caracteres
+#define MAX_VETOR 128   // Os vetores principais manipulados no cÃ³digo tem no mÃ¡ximo 128 posiÃ§Ãµes
 
 /// ----------------------------------------------------------------------------------------
-/// Desenvolvimento das tipagens utilizadas para entrada e saída de dados
+/// Desenvolvimento das tipagens utilizadas para entrada e saÃ­da de dados
 // tCurso: referente a cada curso
 typedef struct {
     int id;                 // ID de cada curso
@@ -31,26 +31,26 @@ typedef struct {
 
 // tCandidato: referente a cada candidato
 typedef struct {
-    int numeroInsc;         // Referente ao número de inscrição do candidato
+    int numeroInsc;         // Referente ao nÃºmero de inscriÃ§Ã£o do candidato
     char nome[MAX_NOME];    // Nome do candidato
     tData dataNasc;         // Data de nascimento do candidato
-    tEndereco endereco;     // Endereço do candidato
+    tEndereco endereco;     // EndereÃ§o do candidato
     char cpf[15];           // CPF do candidato
     char rg[15];            // RG do candidato
-    int sexo;               // Código de Sexo do candidato; enum menuDeclara
-    char nomeMae[MAX_NOME]; // Nome da mãe do candidato.
+    int sexo;               // CÃ³digo de Sexo do candidato; enum menuDeclara
+    char nomeMae[MAX_NOME]; // Nome da mÃ£e do candidato.
 
-    int autodeclaracao;     // 1 - Branco; 2 - Pardo; 3 - Negro; 4 - Indígena; (...)
+    int autodeclaracao;     // 1 - Branco; 2 - Pardo; 3 - Negro; 4 - IndÃ­gena; (...)
     tNotas notas;           // Referente as notas das provas do candidato
-    int formacaoMedio;          // 1 - Público; 2 - Privado; 3 - Parte privado com bolsa; 4 - Parte privado sem bolsa; (...)
-    int classificado;           // 1 - Aprovado na vaga; 0 - Não aprovado; Imita tipo boolean
+    int formacaoMedio;          // 1 - PÃºblico; 2 - Privado; 3 - Parte privado com bolsa; 4 - Parte privado sem bolsa; (...)
+    int classificado;           // 1 - Aprovado na vaga; 0 - NÃ£o aprovado; Imita tipo boolean
 
-    int inscricao1;         // Armazena o ID do curso que o candidato colocou na primeira opção
-    int inscricao2;         // Armazena o ID do curso que o candidato colocou na segunda opção
+    int inscricao1;         // Armazena o ID do curso que o candidato colocou na primeira opÃ§Ã£o
+    int inscricao2;         // Armazena o ID do curso que o candidato colocou na segunda opÃ§Ã£o
 } tCandidato;
 
 
-// tData: referente toda e qualquer data usada no código
+// tData: referente toda e qualquer data usada no cÃ³digo
 // USADA EM tCandidato
 typedef struct {
     int dia;
@@ -59,38 +59,38 @@ typedef struct {
 } tData;
 
 
-// tEndereco: referente a todo e qualquer endereço usado no código
+// tEndereco: referente a todo e qualquer endereÃ§o usado no cÃ³digo
 // USADA EM tCandidato
 typedef struct {
-    char logradouro[MAX_NOME];  // Descrição raiz do endereço (Exemplo: Avenida São Carlos, 2160)
-    char bairro[MAX_NOME];      // Nome do bairro do endereço descrito (Exemplo: Centro)
-    char cidade[MAX_NOME];      // Nome da cidade (Exemplo: São Carlos)
+    char logradouro[MAX_NOME];  // DescriÃ§Ã£o raiz do endereÃ§o (Exemplo: Avenida SÃ£o Carlos, 2160)
+    char bairro[MAX_NOME];      // Nome do bairro do endereÃ§o descrito (Exemplo: Centro)
+    char cidade[MAX_NOME];      // Nome da cidade (Exemplo: SÃ£o Carlos)
     char UF[3];                 // Unidade Federativa (Exemplo: SP)
-    char CEP[10];               // CEP do endereço descrito
+    char CEP[10];               // CEP do endereÃ§o descrito
 } tEndereco;
 
 
 // tNotas: referente as notas de cada candidato
 // USADA EM tCandidato
 typedef struct {
-    double redacao;     // Referente a nota do candidato na prova de redação
-    double linguagens;  // Referente a nota do candidato na prova de Linguagens, Códigos e suas tecnologias
-    double matematica;  // Referente a nota do candidato na prova de Matemática e suas tecnologias
-    double natureza;    // Referente a nota do candidato na prova de Ciências da Natureza e suas tecnologias
-    double humanas;     // Referente a nota do candidato na prova de Ciências Humanas e suas tecnologias
-    double media;       // Média aritmética das 5 notas do aluno (usada em cursos sem pesos definidos nas provas)n
+    double redacao;     // Referente a nota do candidato na prova de redaÃ§Ã£o
+    double linguagens;  // Referente a nota do candidato na prova de Linguagens, CÃ³digos e suas tecnologias
+    double matematica;  // Referente a nota do candidato na prova de MatemÃ¡tica e suas tecnologias
+    double natureza;    // Referente a nota do candidato na prova de CiÃªncias da Natureza e suas tecnologias
+    double humanas;     // Referente a nota do candidato na prova de CiÃªncias Humanas e suas tecnologias
+    double media;       // MÃ©dia aritmÃ©tica das 5 notas do aluno (usada em cursos sem pesos definidos nas provas)n
 } tNotas;
 
 
 // tVaga: referente as vagas de cada curso
 // USADA EM tCurso
 typedef struct {
-    int total;      // Numero total de vagas que são disponibilizadas em um curso
-    int grupo1;     // Cota: escola pública com renda inferior a 1,5 salário mínimo per capita
-    int grupo2;     // Cota: pretos, pardos e indígenas com renda inferior a 1,5 salário mínimo per capita
-    int grupo3;     // Cota: egressos de escola pública independente da renda
-    int grupo4;     // Cota: pretos, pardos e indígenas independente da renda
-    int grupo5;     // Ampla concorrência
+    int total;      // Numero total de vagas que sÃ£o disponibilizadas em um curso
+    int grupo1;     // Cota: escola pÃºblica com renda inferior a 1,5 salÃ¡rio mÃ­nimo per capita
+    int grupo2;     // Cota: pretos, pardos e indÃ­genas com renda inferior a 1,5 salÃ¡rio mÃ­nimo per capita
+    int grupo3;     // Cota: egressos de escola pÃºblica independente da renda
+    int grupo4;     // Cota: pretos, pardos e indÃ­genas independente da renda
+    int grupo5;     // Ampla concorrÃªncia
 } tVaga;
 
 
@@ -102,7 +102,7 @@ typedef struct {
 
 
 /// ----------------------------------------------------------------------------------------
-/// Criação dos menus enumerados dos respectivos elementos
+/// CriaÃ§Ã£o dos menus enumerados dos respectivos elementos
 enum optSexo {
     Masculino = 1,
     Feminino
@@ -137,35 +137,35 @@ enum optFormMedio {
 
 
 /// ----------------------------------------------------------------------------------------
-/// Criação dos protótipos de funções básicas
-// FUNÇÕES DE INSERÇÃO
-void getNome (char *nome[MAX_NOME]);    // Função útil para todas as entradas de nomes
+/// CriaÃ§Ã£o dos protÃ³tipos de funÃ§Ãµes bÃ¡sicas
+// FUNÃ‡Ã•ES DE INSERÃ‡ÃƒO
+void getNome (char *nome[MAX_NOME]);    // FunÃ§Ã£o Ãºtil para todas as entradas de nomes
 void getUniversidade (char *nome[][MAX_NOME]);    // Leitura de nomes de universidades
 void getData (tData *data);             // Leitura de datas
-void getEndereco (tEndereco *endereco); // Leitura de endereços
+void getEndereco (tEndereco *endereco); // Leitura de endereÃ§os
 void getCPF (char *cpf[15]);            // Leitura de CPF
 void getRG (char *rg[15]);              // Leitura de RG
 void getVagas (tVaga *vagas);
 
-void getEnum (enum tipoDado, char *dado); /// "ENUM" PODE SER UM PARÂMETRO???
-/* Objetivo: leitura de dados que são coletados por meio de menus enumerados
+void getEnum (enum tipoDado, char *dado); /// "ENUM" PODE SER UM PARÃ‚METRO???
+/* Objetivo: leitura de dados que sÃ£o coletados por meio de menus enumerados
    Parametros:
-        - tipoDado: menu enumerado a se consultar o número inserido pelo usuário
-        - dado: elemento que recebe o valor correspondente à entrada do usuário no menu enumerado */
+        - tipoDado: menu enumerado a se consultar o nÃºmero inserido pelo usuÃ¡rio
+        - dado: elemento que recebe o valor correspondente Ã  entrada do usuÃ¡rio no menu enumerado */
 
 
-// FUNÇÕES DE VALIDAÇÃO
+// FUNÃ‡Ã•ES DE VALIDAÃ‡ÃƒO
 int validaData (tData data);
 int validaCPF (char cpf[15]);
 int validaRG (char rg[15]);
 
 
-// FUNÇÕES DE BUSCA
-// O usuário do Sisu pode realizar buscas por nome do curso, nome da universidade e por cidade
+// FUNÃ‡Ã•ES DE BUSCA
+// O usuÃ¡rio do Sisu pode realizar buscas por nome do curso, nome da universidade e por cidade
 void buscaTermo(char vetorBusca[][MAX_NOME], int tamanhoVetor);
-/* Objetivo: encontrar a cadeia de char em forma de substring inserida pelo usuário em um vetor. */
+/* Objetivo: encontrar a cadeia de char em forma de substring inserida pelo usuÃ¡rio em um vetor. */
 
-/// FUNÇÕES DE EDIÇÃO? DE REMOÇÃO?
+/// FUNÃ‡Ã•ES DE EDIÃ‡ÃƒO? DE REMOÃ‡ÃƒOO?
 
 /// ----------------------------------------------------------------------------------------
 tCurso cursos[MAX_VETOR];
