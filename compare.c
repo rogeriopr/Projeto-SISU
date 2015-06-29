@@ -1,4 +1,5 @@
-int compare(tMatch *elem1, tMatch *elem2){
+int compare(tMatch *elem1, tMatch *elem2)
+{
    if ( elem1->media < elem2->media)
       return 1;
       
