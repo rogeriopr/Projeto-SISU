@@ -7,6 +7,8 @@
             Felipe Akira (628115)
 */
 
+#define CANDIDATOS_FILE "candidatos.txt"
+
 double mediaCandidato(int i, int opcao)
 {
     //declaracao de variavel
