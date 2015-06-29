@@ -1,14 +1,3 @@
-/*
-   Nome da função: inicializaLista
-   Objetivos: Inicializar o vetor match[] e preencher com os dados dos candidatos
-   Parâmetros Formais:
-       -match[] (tMatch): Vetor de escolha de cursos
-       -nSelecionados[MAX_CURSOS][5] (int): matriz contendo a quantidade de candidatos já  
-        alocados para cada curso e grupo
-       -candidato[] (tCandidato): Vetor de candidatos
-      -nCandidatos (int): Quantidade de candidatos cadastrados
-   Retorno: Quantidade de escolhas de curso em match[] (int)
-*/
 int inicializaLista(tMatch match[], int nSelecionados[MAX_CURSOS][N_GRUPOS],tCandidato candidato[],int nCandidatos){
 
     int i, j; //variaveis locais contadoras de laco
