@@ -7,9 +7,8 @@
             Felipe Akira (628115)
 */
 
-#define CANDIDATOS_FILE "candidatos.txt"
 
-double mediaCandidato(int i, int opcao)
+double mediaCandidato(int i, int opcao, tCandidato candidato[], tCurso curso[])
 {
     //declaracao de variavel
     double media;
@@ -28,7 +27,7 @@ double mediaCandidato(int i, int opcao)
     return media;
 }
 
-int lerCandidatos(tCandidato candidato[])
+int lerCandidatos(tCandidato candidato[],tCurso curso[])
 {
     //declaracao das variaveis
     int nCandidatos;
@@ -64,8 +63,8 @@ int lerCandidatos(tCandidato candidato[])
         fscanf(ifp,"%d %d %d %d",&candidato[i].opcao1.idCurso,&candidato[i].opcao1.grupo,&candidato[i].opcao2.idCurso,&candidato[i].opcao2.grupo);
 
         //calculo da media para o curso escolhido
-        candidato[i].opcao1.media = mediaCandidato(i,1);
-        candidato[i].opcao2.media = mediaCandidato(i,2);
+        candidato[i].opcao1.media = mediaCandidato(i,1,candidato,curso);
+        candidato[i].opcao2.media = mediaCandidato(i,2,candidato,curso);
         candidato[i].classificado = -1; // inicialização para nao classificado
     }
 
