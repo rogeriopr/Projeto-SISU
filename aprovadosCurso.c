@@ -1,4 +1,4 @@
-void aprovadosCurso(tMatch match[],tCandidato candidato[],tCurso curso[],int nMatch){
+void aprovadosCurso(tMatch match[],int nMatch,tCandidato candidato[],tCurso curso[],int nCursos){
 
     //declaraçao das variaveis locais
     //i = numero do candidato na lista match, j = id do curso, k = contador de alunos na lista de aprovados de cada curso
