@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <string.h>
-
 #define TAM_NOME 100
 #define MAX_CURSOS 100
 #define MAX_CANDIDATOS 5000
@@ -51,18 +48,6 @@ typedef struct {
 // tMatch
 typedef struct {
     int idCandidato; //id candidato
-    int idCurso;
-    double media;
-    int opcao;
-    int grupo;
-    int classificado;
-} tMatch;
-
-typedef int (*compfn)(const void*, const void*);
-
-// tMatch
-typedef struct {
-    int idCandidato; //id candidato
     int idCurso; //id do curso
     double media;
     int opcao; //1 opcao ou 2 opcao
@@ -79,7 +64,7 @@ typedef int (*compfn)(const void*, const void*);
    Parâmetros Formais:
        -curso[]: Vetor de tCurso (saída)
    Retorno: Número de cursos lidos (int)
-*/  
+*/
 int lerCursos(tCurso curso[]);
 
 /*
@@ -90,7 +75,7 @@ int lerCursos(tCurso curso[]);
        -opcao: Opção de curso escolhida (int)
    Retorno: Média das notas do candidato (double)
 */
-double mediaCandidato(int i, int opcao);
+double mediaCandidato(int i, int opcao, tCandidato candidato[], tCurso curso[]);
 
 /*
    Nome da função: lerCandidatos
@@ -99,7 +84,7 @@ double mediaCandidato(int i, int opcao);
        -candidato[]: Vetor de tCandidato (saída)
    Retorno: Número de candidatos lidos (int)
 */
-int lerCandidatos(tCandidato candidato[]);
+int lerCandidatos(tCandidato candidato[],tCurso curso[]);
 
 
 /*
@@ -107,16 +92,16 @@ int lerCandidatos(tCandidato candidato[]);
    Objetivos: Inicializar o vetor match[] e preencher com os dados dos candidatos
    Parâmetros Formais:
        -match[] (tMatch): Vetor de escolha de cursos
-       -nSelecionados[MAX_CURSOS][5] (int): matriz contendo a quantidade de candidatos já  
+       -nSelecionados[MAX_CURSOS][5] (int): matriz contendo a quantidade de candidatos já
         alocados para cada curso e grupo
        -candidato[] (tCandidato): Vetor de candidatos
       -nCandidatos (int): Quantidade de candidatos cadastrados
    Retorno: Quantidade de escolhas de curso em match[] (int)
 */
-int inicializaLista(tMatch match[], int nSelecionados[MAX_CURSOS][5],tCandidato candidato[],int nCandidatos);
+int inicializaLista(tMatch match[], int nSelecionados[MAX_CURSOS][5],tCandidato candidato[],int nCandidatos,int nCursos);
 
 /*
-   Nome da função: compare  
+   Nome da função: compare
    Objetivos: Implementar o quickSort entre candidatos
    Parâmetros Formais:
        - elem1: Primeiro aluno(entrada)
@@ -126,7 +111,7 @@ int inicializaLista(tMatch match[], int nSelecionados[MAX_CURSOS][5],tCandidato 
 int compare(tMatch *elem1, tMatch *elem2);
 
 /*
-   Nome da função: ordenaLista   
+   Nome da função: ordenaLista
    Objetivos: Ordenar a lista de escolhas de curso de acordo com a media
    Parâmetros Formais:
        -match[]: Vetor de escolha de cursos
@@ -176,7 +161,7 @@ void trocaEscolha(int id, int pos,tMatch match[],int nSelecionados[MAX_CURSOS][5
        -nMatch: Número de aprovados (entrada)
    Retorno: Nenhum (procedimento)
 */
-void aprovadosTodos(tMatch match[],tCandidato candidato[],tCurso curso[],int nMatch);
+void aprovadosTodos(tMatch match[],int nMatch,tCandidato candidato[],tCurso curso[]);
 
 /*
    Nome da função: aprovadosCurso
@@ -188,7 +173,7 @@ void aprovadosTodos(tMatch match[],tCandidato candidato[],tCurso curso[],int nMa
        -nMatch: Número de aprovados (entrada)
    Retorno: Nenhum (procedimento)
 */
-void aprovadosCurso(tMatch match[],tCandidato candidato[],tCurso curso[],int nMatch);
+void aprovadosCurso(tMatch match[],int nMatch,tCandidato candidato[],tCurso curso[],int nCursos);
 
 /*
    Nome da função: aprovadosGrupo
@@ -200,7 +185,7 @@ void aprovadosCurso(tMatch match[],tCandidato candidato[],tCurso curso[],int nMa
        -nMatch: Número de aprovados (entrada)
    Retorno: Nenhum (procedimento)
 */
-void aprovadosGrupo(tMatch match[],tCandidato candidato[],tCurso curso[],int nMatch);
+void aprovadosGrupo(tMatch match[],int nMatch,tCandidato candidato[],tCurso curso[],int nCursos);
 
 /*
    Nome da função: procuraCandidatos
@@ -214,10 +199,10 @@ void aprovadosGrupo(tMatch match[],tCandidato candidato[],tCurso curso[],int nMa
 void procuraCandidatos(tCandidato candidato[],int nCandidatos,tCurso curso[]);
 
 /*
-   Nome da função: menuResultados  
+   Nome da função: menuResultados
    Objetivos: Imprimir resultados obtidos com o match
    Parâmetros Formais:
        -Nenhum
    Retorno: Nenhum (procedimento)
-*/  
-void menuResultados();
+*/
+void menuResultados(tMatch match[],int nMatch,tCandidato candidato[], int nCandidatos, tCurso curso[],int nCursos);
