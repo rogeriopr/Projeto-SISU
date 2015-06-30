@@ -31,6 +31,9 @@ int main()
     tCandidato candidato[MAX_CANDIDATOS];//vetor de candidatos
     tMatch match[MAX_MATCH]; //vetor de classificação dos candidatos - GERAL
 
+    //COR
+    system("color 2F");
+    
     /**PROCESSO DE LEITURA DE DADOS DO ARQUIVO**/
     nCursos=lerCursos(curso);
     nCandidatos=lerCandidatos(candidato,curso);
