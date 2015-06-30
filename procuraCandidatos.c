@@ -12,14 +12,19 @@ void procuraCandidatos(tCandidato candidato[],int nCandidatos,tCurso curso[])
 					        // Requer a biblioteca <string.h>.
             k++;
             printf("ID: %d\nNome: %s\n",i,candidato[i].nome);
-            if(candidato[i].classificado == -1) {
-                printf("Candidato nao aprovado!\n");
-            } else if(candidato[i].classificado == -2) {
+            printf("1. Opcao:\nCurso: %s\nGrupo: %d\nNota: %.2Lf\n",curso[candidato[i].opcao1.idCurso].nome,candidato[i].opcao1.grupo,candidato[i].opcao1.media);
+            if(candidato[i].classificado == -2) {
                 printf("Candidato aprovado na 1. Opcao\n");
-                printf("Curso: %s\nNota: %.2Lf\n",curso[candidato[i].opcao1.idCurso].nome,candidato[i].opcao1.media);
-            } else {
+            }else{
+                printf("Candidato não aprovado na 1. Opcao\n");
+            }
+            printf("\n2. Opcao:\nCurso: %s\nGrupo: %d\nNota: %.2Lf\n",curso[candidato[i].opcao2.idCurso].nome,candidato[i].opcao2.grupo,candidato[i].opcao2.media);
+            if(candidato[i].classificado >=0) {
                 printf("Candidato aprovado na 2. Opcao\n");
-                printf("Curso: %s\nNota: %.2Lf\n",curso[candidato[i].opcao2.idCurso].nome,candidato[i].opcao2.media);
+            }
+            else if (candidato[i].classificado == -1)
+            {
+                printf("Candidato nao aprovado na 2. Opcao\n");
             }
             printf("\n");
         }
