@@ -24,12 +24,13 @@ void aprovadosGrupo(tMatch match[],int nMatch,tCandidato candidato[],tCurso curs
         for(j=0; j < nCursos; j++){
 
             printf("Curso: %s\n",curso[j].nome);
-            fprintf(ifp,"Curso:;%s\nPosicao;Nome;Opcao;Media\n\n",curso[j].nome);
+
 
             for(c = 1; c <= N_GRUPOS; c++){
 
                 printf("Grupo %d:\n", c);
                 fprintf(ifp,"Grupo %d:\n",c);
+                fprintf(ifp,"Curso:;%s\nPosicao;Nome;Opcao;Media\n",curso[j].nome);
 
                 //k = posiçao inicial de alunos em cada grupo
                 k = 1;
