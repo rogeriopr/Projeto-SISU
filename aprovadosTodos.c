@@ -7,7 +7,8 @@ void aprovadosTodos(tMatch match[],int nMatch,tCandidato candidato[],tCurso curs
     ifp = fopen(OUTPUT_TODOS_FILE, mode);	// OUTPUT_TODOS_FILE = aprovados_todos.csv
 
     if (ifp == NULL) {
-        exit(1);
+        printf("Erro na abertura do arquivo %s\n",OUTPUT_TODOS_FILE);
+        return;
     }
 
 	//Impressão dos dados
