@@ -22,6 +22,8 @@ int lerCursos(tCurso curso[])
     
     //--> Caso não encontre o Arquivo para o programa
     if (ifp == NULL) {
+        printf("Erro na abertura do arquivo %s\n",CURSOS_FILE);
+        system("pause");
         exit(1);
     }
     
