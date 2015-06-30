@@ -1,10 +1,5 @@
 /*
-    Funções mediaCandidato() e lerCandidatos()
-
-    Alunos: Leonardo Tavares(628174)
-            Gabriel Gonçalves (628123)
-            Bruna Zamith (628093)
-            Felipe Akira (628115)
+    SuperGrupo 2
 */
 
 
@@ -60,7 +55,8 @@ int lerCandidatos(tCandidato candidato[],tCurso curso[])
             }
         }
         strcpy(candidato[i].nome,nomeTemp);
-
+        
+        //leitura das notas e escolhasa de curso
         fscanf(ifp,"%Lf %Lf %Lf %Lf %Lf",&candidato[i].notas.humanas,&candidato[i].notas.linguagens,&candidato[i].notas.matematica,&candidato[i].notas.natureza,&candidato[i].notas.redacao);
         fscanf(ifp,"%d %d %d %d",&candidato[i].opcao1.idCurso,&candidato[i].opcao1.grupo,&candidato[i].opcao2.idCurso,&candidato[i].opcao2.grupo);
 
