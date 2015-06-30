@@ -13,7 +13,8 @@ void aprovadosCurso(tMatch match[],int nMatch,tCandidato candidato[],tCurso curs
 
     //teste para a verificaçao de abertura do arquivo
     if (ifp == NULL){
-        exit(1);
+        printf("Erro na abertura do arquivo %s\n",OUTPUT_CURSO_FILE);
+        return;
     }
 
     printf("Classificados por curso:\n\n");
