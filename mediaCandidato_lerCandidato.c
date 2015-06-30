@@ -40,6 +40,8 @@ int lerCandidatos(tCandidato candidato[],tCurso curso[])
     ifp = fopen(CANDIDATOS_FILE, mode);
 
     if (ifp == NULL) {
+        printf("Erro na abertura do arquivo %s\n",CANDIDATOS_FILE);
+        system("pause");
         exit(1);
     }
 
