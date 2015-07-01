@@ -152,6 +152,19 @@ void procuraCandidatos(tCandidato candidato[],int nCandidatos,tCurso curso[]);
 */
 void procuraCurso(tMatch match[],int nMatch,tCandidato candidato[],tCurso curso[],int nCursos);
 
+/*
+   Nome da função: mostraCursoGrupo
+   Objetivos: imprime os resultados de um curso especifico separados por cota
+   Parâmetros Formais:
+       -match[]: Vetor com os aprovados (Entrada de dados)
+       -candidato[]: Vetor com os dados dos candidatos (Entrada de dados)
+       -curso[]: Vetor com os dados dos cursos (Entrada de dados)
+       -nMatch: Número de aprovados (Entrada de dados)
+       -nCursos (int): Quantidade de cursos cadastrados (Entrada de dados)
+       -nome(char): nome do curso a pesquisar(Entrada de dados)
+   Retorno: Nenhum (procedimento)
+*/
+void mostraCursoGrupo(tMatch match[],int nMatch,tCandidato candidato[],tCurso curso[],int nCursos,char nome[]);
 
 /*
    Nome da função: menuResultados
