@@ -14,7 +14,7 @@ Data: 01/07/2015
 #include "prototiposFuncoes.c"
 #include "lerCurso.c"
 #include "mediaCandidato.c"
-#include "lerCandidatos.c"
+#include "lerCandidato.c"
 #include "inicializaLista.c"
 #include "compare.c"
 #include "ordenaLista.c"
