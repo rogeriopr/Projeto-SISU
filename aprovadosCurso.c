@@ -27,7 +27,8 @@ void aprovadosCurso(tMatch match[],int nMatch,tCandidato candidato[],tCurso curs
         return;
     }
 
-    printf("Classificados por curso:\n\n");
+    printf("Exportando dados para o arquivo...\n\n");
+    //printf("Classificados por curso:\n\n");
     fprintf(ifp, "Classificados por curso:\n\n");
 
     //Loop para preenchimento da lista de aprovados
@@ -35,20 +36,23 @@ void aprovadosCurso(tMatch match[],int nMatch,tCandidato candidato[],tCurso curs
          //k = posiçao inicial de alunos em cada curso
         k=1;
 
-        printf("Curso: %s\n",curso[j].nome);
+        //printf("Curso: %s\n",curso[j].nome);
         fprintf(ifp,"Curso:;%s\nPosicao;Nome;Opcao;Grupo;Media\n",curso[j].nome);
 
         //Escrita dos alunos na lista
         for(i=0; i<nMatch; i++){
             if(match[i].classificado==1 && match[i].idCurso==j){
-                printf("%3d. %10s%25s Opcao: %d Grupo: %d Media: %.2Lf\n", k, candidato[match[i].idCandidato].nome, curso[match[i].idCurso].nome, match[i].opcao, match[i].grupo, match[i].media);
+                //printf("%3d. %10s%25s Opcao: %d Grupo: %d Media: %.2Lf\n", k, candidato[match[i].idCandidato].nome, curso[match[i].idCurso].nome, match[i].opcao, match[i].grupo, match[i].media);
                 fprintf(ifp, "%d;%s;%d;%d;%.2Lf\n", k++ ,candidato[match[i].idCandidato].nome, match[i].opcao, match[i].grupo, match[i].media);
             }
         }
 
-        printf("\n\n", curso[j].nome);
+        //printf("\n\n", curso[j].nome);
         fprintf(ifp, "\n\n", curso[j].nome);
     }
+    //limpa a tela
+    system("cls");
+    printf("Dados exportados para o arquivo: %s\n",OUTPUT_CURSO_FILE);
 
     fclose(ifp);
 }
