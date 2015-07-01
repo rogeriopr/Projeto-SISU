@@ -44,6 +44,8 @@ int main()
     //cor
     system("color 2F");
 
+    /**INFORMACOES**/
+    printf("PROJETO SISU\n\nInicializacao:\n\n");
     /**PROCESSO DE LEITURA DE DADOS DO ARQUIVO**/
     nCursos=lerCursos(curso);
     nCandidatos=lerCandidatos(candidato,curso);
@@ -52,7 +54,9 @@ int main()
     ordenaLista(match,nMatch);
     /**MATCH**/
     fazMatch(match,nSelecionados,candidato,curso,nMatch);
-    /**LIMPEZA DA TELA**/
+    /**PAUSE E LIMPEZA DA TELA**/
+    printf("\n\n");
+    system("pause");
     system("cls");
     /**OUTPUT DOS RESULTADOS**/
     menuResultados(match, nMatch, candidato, nCandidatos, curso,nCursos);
