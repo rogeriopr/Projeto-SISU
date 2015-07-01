@@ -23,6 +23,7 @@ void toUpperStr(char *str){
 void procuraCandidatos(tCandidato candidato[],int nCandidatos,tCurso curso[])
 {
     char nome[TAM_NOME];
+    char temp[TAM_NOME];
     int i,k=0;
 
     printf("Nome do Candidato: ");
@@ -37,8 +38,9 @@ void procuraCandidatos(tCandidato candidato[],int nCandidatos,tCurso curso[])
     system("cls");
 
     for(i=0;i<nCandidatos;i++) {
-        toUpperStr(candidato[i].nome);
-        if(strstr(candidato[i].nome,nome)!=NULL) { // Compara o nome do teclado com os nomes dos candidatos dentro do vetor candidato.
+        strcpy(temp,candidato[i].nome);
+        toUpperStr(temp);
+        if(strstr(temp,nome)!=NULL) { // Compara o nome do teclado com os nomes dos candidatos dentro do vetor candidato.
 					        // Requer a biblioteca <string.h>.
             k++;
             printf("ID: %d\nNome: %s\n",i,candidato[i].nome);
