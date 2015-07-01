@@ -39,7 +39,7 @@ void mostraCursoGrupo(tMatch match[],int nMatch,tCandidato candidato[],tCurso cu
                     }
                 }
                 //estatisticas
-                printf("\nVagas Preenchidas: %d\nTotal de vagas: %d\nTotal de candidatos(1. e 2. Opcao): %d\n\n",k-1,curso[i].vagas[c],l);
+                printf("\n    Vagas Preenchidas: %d\n    Total de vagas: %d\n    Total de candidatos(1. e 2. Opcao): %d\n\n",k-1,curso[i].vagas[c],l);
             }
         }
     }
