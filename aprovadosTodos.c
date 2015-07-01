@@ -1,3 +1,13 @@
+/*
+   Nome da função: aprovadosTodos
+   Objetivos: Imprimir todos os aprovados
+   Parâmetros Formais:
+       -match[]: Vetor com os aprovados (Entrada de dados)
+       -candidato[]: Vetor com os dados dos candidatos (Entrada de dados)
+       -curso[]: Vetor com os dados dos cursos (Entrada de dados)
+       -nMatch: Número de aprovados (Entrada de dados)
+   Retorno: Nenhum (procedimento)
+*/
 void aprovadosTodos(tMatch match[],int nMatch,tCandidato candidato[],tCurso curso[])
 {
     int i,j=1;					//Variáveis para controle de laço
