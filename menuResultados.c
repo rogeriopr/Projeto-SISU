@@ -16,7 +16,7 @@ void menuResultados(tMatch match[],int nMatch,tCandidato candidato[], int nCandi
 	char opcao;	//declaracao de variavael local
 
 	do {
-		printf("Escolha a opcao:\n\n\t1. Exportar Aprovados Geral\n\t2. Exportar Aprovados por curso\n\t3. Exportar Aprovados por curso e grupo\n\t4. Busca por candidato\n\t5. Busca por curso\n\n\t0. Sair\n\nOpcao: ");
+		printf("Escolha a opcao:\n\n\t1. Exportar Aprovados Geral\n\t2. Exportar Aprovados por curso\n\t3. Exportar Aprovados por curso e grupo\n\n\t4. Busca por candidato\n\t5. Busca por curso\n\n\t0. Sair\n\nOpcao: ");
 		opcao=getch();
 
 		switch (opcao) {
