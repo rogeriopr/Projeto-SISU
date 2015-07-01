@@ -14,8 +14,6 @@ void fazMatch(tMatch match[],int nSelecionados[MAX_CURSOS][N_GRUPOS],tCandidato 
     int i,j,k; //contadores
     int l;
     /*Match da lista de escolhas*/
-    printf("Fazendo match dos candidatos.\n");
-    printf("Fazendo match dos candidatos..\n");
     printf("Fazendo match dos candidatos...\n");
     for(i=0;i<nMatch;i++){
         if(candidato[match[i].idCandidato].classificado!=-2){//-2 significa aprovado na 1 opcao
@@ -35,20 +33,4 @@ void fazMatch(tMatch match[],int nSelecionados[MAX_CURSOS][N_GRUPOS],tCandidato 
     }
 
     printf("Sucesso ao fazer match dos candidatos!!!\n\n");
-
-
-    //Menu para verificar se o usuario quer continuar e ver o resultado ou nao
-    printf("\nContinuar? 1.Sim 2.Nao\n");
-    scanf("%d", &l);
-
-    while(l!=1 && l!=2){
-        printf("\nOpcao invalida, digite novamente: 1.Sim 2.Nao\n");
-        scanf("%d", &l);
-    }
-    if(l==1){
-        return;
-    }
-    if(l==2){
-        exit(0);
-    }
 }
