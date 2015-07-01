@@ -13,6 +13,7 @@ void procuraCurso(tMatch match[],int nMatch,tCandidato candidato[],tCurso curso[
 {
     //declaracao das variaveis
     char nome[TAM_NOME];
+    char temp[TAM_NOME];
     int i,j,k=0;
 
     //leitura do nome do curso
@@ -28,9 +29,10 @@ void procuraCurso(tMatch match[],int nMatch,tCandidato candidato[],tCurso curso[
     system("cls");
     //pesquisa para cursos com nome parecido
     for(i=0;i<nCursos;i++) {
+        strcpy(temp,curso[i].nome);
+        toUpperStr(temp);
 
-        toUpperStr(curso[i].nome);
-        if(strstr(curso[i].nome,nome)!=NULL) { // Compara o nome do teclado com os nomes dos candidatos dentro do vetor candidato.
+        if(strstr(temp,nome)!=NULL) { // Compara o nome do teclado com os nomes dos candidatos dentro do vetor candidato.
 					        // Requer a biblioteca <string.h>.
             k=1;
             //impressao dos alunos aprovados
