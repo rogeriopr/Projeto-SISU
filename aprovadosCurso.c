@@ -1,3 +1,13 @@
+/*
+   Nome da função: aprovadosCurso
+   Objetivos: Imprimir os aprovados separados por cursos
+   Parâmetros Formais:
+       -match[]: Vetor com os aprovados (Entrada de dados)
+       -candidato[]: Vetor com os dados dos candidatos (Entrada de dados)
+       -curso[]: Vetor com os dados dos cursos (Entrada de dados)
+       -nMatch: Número de aprovados (Entrada de dados)
+   Retorno: Nenhum (procedimento)
+*/
 void aprovadosCurso(tMatch match[],int nMatch,tCandidato candidato[],tCurso curso[],int nCursos){
 
     //declaraçao das variaveis locais
@@ -36,7 +46,7 @@ void aprovadosCurso(tMatch match[],int nMatch,tCandidato candidato[],tCurso curs
             }
         }
 
-        printf("\n\n");
+        printf("\n\n", curso[j].nome);
         fprintf(ifp, "\n\n", curso[j].nome);
     }
 
