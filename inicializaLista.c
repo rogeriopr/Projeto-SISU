@@ -1,15 +1,28 @@
-int inicializaLista(tMatch match[], int nSelecionados[MAX_CURSOS][5],tCandidato candidato[],int nCandidatos,int nCursos)
+/*
+   Nome da função: inicializaLista
+   Objetivos: Inicializar o vetor match[] e preencher com os dados dos candidatos
+   Parâmetros Formais:
+       -match[] (tMatch): Vetor de escolha de cursos (Entrada e saída de dados)
+       -nSelecionados[MAX_CURSOS][N_GRUPOS] (int): matriz contendo a quantidade de candidatos já alocados para cada curso e grupo (Entrada e saída de dados)
+       -candidato[] (tCandidato): Vetor de candidatos (Entrada e saída de dados)
+       -nCandidatos (int): Quantidade de candidatos cadastrados (Entrada de dados)
+       -nCursos (int): Quantidade de cursos cadastrados (Entrada de dados)
+   Retorno: Quantidade de escolhas de curso em match[] (int j)
+*/
+int inicializaLista(tMatch match[], int nSelecionados[MAX_CURSOS][N_GRUPOS],tCandidato candidato[],int nCandidatos,int nCursos)
 {
     int i,j; //contadores de laço
     // inializacao do vetor lista com cada candidato tendo a variavel inicializada
-    printf("Inicializando lista de candidatos:\n");
+    printf("Lendo lista de candidatos.\n");
+    printf("Lendo lista de candidatos..\n");
+    printf("Lendo lista de candidatos...\n");
     for(i=0;i<MAX_CANDIDATOS;i++)
     {
         match[i].media=0;
     }
     for(i=0;i<nCursos;i++)
     {
-        for(j=0;j<5;j++)
+        for(j=0;j<N_GRUPOS;j++)
         {
             nSelecionados[i][j]=0;
         }
@@ -25,7 +38,6 @@ int inicializaLista(tMatch match[], int nSelecionados[MAX_CURSOS][5],tCandidato 
         match[j].grupo=candidato[i].opcao1.grupo;
         match[j].classificado=0;
         j++;
-        printf("%s - Opcao 1/",candidato[i].nome);
         if(candidato[i].opcao2.idCurso!=-1)
         {
             match[j].idCandidato=i;
@@ -35,9 +47,9 @@ int inicializaLista(tMatch match[], int nSelecionados[MAX_CURSOS][5],tCandidato 
             match[j].grupo=candidato[i].opcao2.grupo;
             match[j].classificado=0;
             j++;
-            printf("Opcao 2");
         }
-        printf(" OK!\n");
     }
+
+    printf("Sucesso ao importar lista de candidatos!!\n\n");
     return j;//retorna quantos foram colocados na lista
 }
