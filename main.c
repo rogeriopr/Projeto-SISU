@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 //includes das estruturas e funções
 #include "estruturaDados_Prototipos.c"
@@ -14,8 +15,9 @@
 #include "aprovadosGrupo.c"
 #include "aprovadosTodos.c"
 #include "procuraCandidatos.c"
-#include "menuResultados.c"
 #include "aprovadosGrupoPesquisa.c"
+#include "menuResultados.c"
+
 
 int main()
 {

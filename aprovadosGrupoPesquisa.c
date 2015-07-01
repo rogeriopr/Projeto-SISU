@@ -8,9 +8,12 @@ void procuraCurso(tMatch match[],int nMatch,tCandidato candidato[],tCurso curso[
     printf("Nome do Curso: ");
     fflush(stdin);
     gets(nome);
+    toUpperStr(nome);
 
     //pesquisa para cursos com nome parecido
     for(i=0;i<nCursos;i++) {
+
+        toUpperStr(curso[i].nome);
         if(strstr(curso[i].nome,nome)!=NULL) { // Compara o nome do teclado com os nomes dos candidatos dentro do vetor candidato.
 					        // Requer a biblioteca <string.h>.
             k++;
