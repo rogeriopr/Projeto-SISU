@@ -25,6 +25,7 @@ int lerCandidatos(tCandidato candidato[],tCurso curso[])
     }
 
     //leitura do numero max de candidatos
+    printf("Lendo lista de candidatos...\n");
     fscanf(ifp, "%d", &nCandidatos);
 
     //leitura dos cursos
@@ -52,6 +53,8 @@ int lerCandidatos(tCandidato candidato[],tCurso curso[])
 
     //fechando o arquivo de entrada
     fclose(ifp);
+
+    printf("Sucesso ao importar %d candidatos!!\n\n",nCandidatos);
 
     //retorno
     return nCandidatos;
