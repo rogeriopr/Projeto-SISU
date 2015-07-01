@@ -3,7 +3,7 @@ void menuResultados(tMatch match[],int nMatch,tCandidato candidato[], int nCandi
 	int opcao;	//declaracao de variavael local
 
 	do {
-		printf("Escolha a opcao:\n\n\t1. Exportar Aprovados Geral\n\t2. Exportar Aprovados por curso\n\t3. Exportar Aprovados por curso e grupo\n\t4. Busca por candidato\n\n\t0. Sair\n\nOpcao: ");
+		printf("Escolha a opcao:\n\n\t1. Exportar Aprovados Geral\n\t2. Exportar Aprovados por curso\n\t3. Exportar Aprovados por curso e grupo\n\t4. Busca por candidato\n\t5. Busca por curso\n\n\t0. Sair\n\nOpcao: ");
 		while (scanf("%d", &opcao) != 1);
 		switch (opcao) {
 		case 1:
@@ -21,6 +21,10 @@ void menuResultados(tMatch match[],int nMatch,tCandidato candidato[], int nCandi
 		case 4:
 			system("cls");
 			procuraCandidatos(candidato, nCandidatos, curso);	//Opcao para procurar candidatos pelo nome
+			break;
+        case 5:
+			system("cls");
+			procuraCurso(match, nMatch, candidato, curso, nCursos);	//Opcao para procurar candidatos pelo nome
 			break;
 		}
 		printf("\n\n");

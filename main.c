@@ -15,6 +15,7 @@
 #include "aprovadosTodos.c"
 #include "procuraCandidatos.c"
 #include "menuResultados.c"
+#include "aprovadosGrupoPesquisa.c"
 
 int main()
 {
@@ -33,7 +34,7 @@ int main()
 
     //COR
     system("color 2F");
-    
+
     /**PROCESSO DE LEITURA DE DADOS DO ARQUIVO**/
     nCursos=lerCursos(curso);
     nCandidatos=lerCandidatos(candidato,curso);

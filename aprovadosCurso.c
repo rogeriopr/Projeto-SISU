@@ -36,7 +36,7 @@ void aprovadosCurso(tMatch match[],int nMatch,tCandidato candidato[],tCurso curs
             }
         }
 
-        printf("\n\n", curso[j].nome);
+        printf("\n\n");
         fprintf(ifp, "\n\n", curso[j].nome);
     }
 
