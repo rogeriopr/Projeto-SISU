@@ -62,4 +62,7 @@ void procuraCandidatos(tCandidato candidato[],int nCandidatos,tCurso curso[])
 
     if(k==0)
         printf("Nenhum Candidato com esse nome encontrado.\n");
+
+    system("pause");
+    system("cls");
 }
