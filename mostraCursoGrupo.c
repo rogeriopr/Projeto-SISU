@@ -10,7 +10,7 @@
        -nome(char): nome do curso a pesquisar(Entrada de dados)
    Retorno: Nenhum (procedimento)
 */
-void mostraCursoGrupo(tMatch match[],int nMatch,tCandidato candidato[],tCurso curso[],int nCursos,char nome[TAM_NOME])
+void mostraCursoGrupo(tMatch match[],int nMatch,tCandidato candidato[],tCurso curso[],int nCursos,char nome[])
 {
     //declaracao das variaveis
     char temp[TAM_NOME];
