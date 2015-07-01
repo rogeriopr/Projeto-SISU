@@ -1,10 +1,24 @@
+/*
+   Nome da função: menuResultados
+   Objetivos: Imprimir resultados obtidos com o match
+   Parâmetros Formais:
+       -match[]: Vetor com os aprovados (Entrada de dados)
+       -nMatch: Número de aprovados (Entrada de dados)
+       -candidato[]: Vetor com os dados dos candidatos (Entrada de dados)
+       -nCandidatos: Int com a quantidade de candidatos (Entrada de dados)
+       -curso[]: Vetor com os dados dos cursos (Entrada de dados)
+       -nCursos (int): Quantidade de cursos cadastrados (Entrada de dados)
+       -nCursos (int): Quantidade de cursos cadastrados (Entrada de dados)
+   Retorno: Nenhum (procedimento)
+*/
 void menuResultados(tMatch match[],int nMatch,tCandidato candidato[], int nCandidatos, tCurso curso[],int nCursos)
 {
-	int opcao;	//declaracao de variavael local
+	char opcao;	//declaracao de variavael local
 
 	do {
 		printf("Escolha a opcao:\n\n\t1. Exportar Aprovados Geral\n\t2. Exportar Aprovados por curso\n\t3. Exportar Aprovados por curso e grupo\n\t4. Busca por candidato\n\t5. Busca por curso\n\n\t0. Sair\n\nOpcao: ");
 		opcao=getch();
+
 		switch (opcao) {
 		case '1':
 			system("cls");
@@ -22,9 +36,9 @@ void menuResultados(tMatch match[],int nMatch,tCandidato candidato[], int nCandi
 			system("cls");
 			procuraCandidatos(candidato, nCandidatos, curso);	//Opcao para procurar candidatos pelo nome
 			break;
-        	case '5':
+		case '5':
 			system("cls");
-			procuraCurso(match, nMatch, candidato, curso, nCursos);	//Opcao para procurar candidatos pelo nome
+			procuraCurso(match, nMatch, candidato, curso, nCursos);	//Opcao para procurar candidatos pelo curso
 			break;
 		default:
 			system("cls");
@@ -32,7 +46,7 @@ void menuResultados(tMatch match[],int nMatch,tCandidato candidato[], int nCandi
 			break;
 		}
 		printf("\n\n");
-	} while (opcao != 0);	//criterio de parada
+	} while (opcao != '0');	//criterio de parada
 
 	system("cls");	//limpa a tela
 }
