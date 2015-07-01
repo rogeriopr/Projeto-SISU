@@ -13,7 +13,7 @@ void procuraCurso(tMatch match[],int nMatch,tCandidato candidato[],tCurso curso[
 {
     //declaracao das variaveis
     char nome[TAM_NOME];
-    int i,j,k;
+    int i,j,k=0;
 
     //leitura do nome do curso
     printf("Nome do Curso: ");
@@ -49,4 +49,7 @@ void procuraCurso(tMatch match[],int nMatch,tCandidato candidato[],tCurso curso[
     //impressao em caso de nenhuma curso possuir o nome
     if(k==0)
         printf("Nenhum Curso com esse nome encontrado.\n");
+
+    system("pause");
+    system("cls");
 }
