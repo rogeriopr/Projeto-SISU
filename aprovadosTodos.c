@@ -23,17 +23,22 @@ void aprovadosTodos(tMatch match[],int nMatch,tCandidato candidato[],tCurso curs
 
 	//Impressão dos dados
 
-    printf("Classificados:\n\n");								//imprime na tela
+    printf("Exportando dados para o arquivo...\n\n");
+    //printf("Classificados:\n\n");								//imprime na tela
     fprintf(ifp,"Posicao;Nome;Curso;Opcao;Grupo;Media\n");		//imprime no arquivo
     for(i=0;i<nMatch;i++)
     {
         if(match[i].classificado==1)
         {
         	//imrpime na tela:
-            printf("%3d. %10s%25s Opcao: %d Grupo: %d Media: %.2Lf\n",j,candidato[match[i].idCandidato].nome,curso[match[i].idCurso].nome,match[i].opcao,match[i].grupo,match[i].media);
+            //printf("%3d. %10s %25s Opcao: %d Grupo: %d Media: %.2Lf\n",j,candidato[match[i].idCandidato].nome,curso[match[i].idCurso].nome,match[i].opcao,match[i].grupo,match[i].media);
             //imprime no arquivo:
             fprintf(ifp,"%d;%s;%s;%d;%d;%.2Lf\n",j++,candidato[match[i].idCandidato].nome,curso[match[i].idCurso].nome,match[i].opcao,match[i].grupo,match[i].media);
         }
     }
+    //limpa a tela
+    system("cls");
+    printf("Dados exportados para o arquivo: %s\n",OUTPUT_TODOS_FILE);
+
     fclose(ifp);
 }
