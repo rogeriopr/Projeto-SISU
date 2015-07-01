@@ -1,11 +1,20 @@
+/*
+Projeto SISU
+Autores: Alunos de CAP 2015-S1 025070-B
+Professor: Ricardo Rodrigues Ciferri
+Data: 01/07/2015
+*/
+
+///Includes da bibliotecas
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h>
 
-//includes das estruturas e funções
-#include "estruturaDados_Prototipos.c"
+///Includes das estruturas e funções
+#include "estruturaDados.c"
+#include "prototiposFuncoes.c"
 #include "lerCurso.c"
-#include "mediaCandidato_lerCandidato.c"
+#include "mediaCandidato.c"
+#include "lerCandidatos.c"
 #include "inicializaLista.c"
 #include "compare.c"
 #include "ordenaLista.c"
@@ -15,26 +24,24 @@
 #include "aprovadosGrupo.c"
 #include "aprovadosTodos.c"
 #include "procuraCandidatos.c"
-#include "aprovadosGrupoPesquisa.c"
+#include "procuraCurso.c"
 #include "menuResultados.c"
 
-
+///Função Principal
 int main()
 {
-    //declarações de variaveis
+    //declaração e inicialização de variaveis
+    int nCursos; //quantidade de cursos
+    int nCandidatos; //quantidade de candidatos
+    int nMatch; //quantidade de escolhas no vetor match
+    int nSelecionados[MAX_CURSOS][5]={0}; //quantidade de candidatos ja elecionados pra cada curso e grupo
 
-    //nCursos:quantidade de cursos
-    //nCandidatos: quantidade de candidatos
-    //nMatch: quantidade de escolhas no vetor match
-    //nSelecionados[CURSO][GRUPO]: quantidade de candidatos ja elecionados pra cada curso e grupo
-    int nCursos, nCandidatos, nMatch, nSelecionados[MAX_CURSOS][5]={0};
-
-    //VETORES
-    tCurso curso[MAX_CURSOS];//vetor de cursos
-    tCandidato candidato[MAX_CANDIDATOS];//vetor de candidatos
+    //vetores
+    tCurso curso[MAX_CURSOS]; //vetor de cursos
+    tCandidato candidato[MAX_CANDIDATOS]; //vetor de candidatos
     tMatch match[MAX_MATCH]; //vetor de classificação dos candidatos - GERAL
 
-    //COR
+    //cor
     system("color 2F");
 
     /**PROCESSO DE LEITURA DE DADOS DO ARQUIVO**/
@@ -45,11 +52,12 @@ int main()
     ordenaLista(match,nMatch);
     /**MATCH**/
     fazMatch(match,nSelecionados,candidato,curso,nMatch);
-
-    system("cls");//limpeza da tela
-
+    /**LIMPEZA DA TELA**/
+    system("cls");
     /**OUTPUT DOS RESULTADOS**/
     menuResultados(match, nMatch, candidato, nCandidatos, curso,nCursos);
 
+    //encerra o programa
     return 0;
 }
+
