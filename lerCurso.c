@@ -25,8 +25,6 @@ int lerCursos(tCurso curso[])
     fscanf(ifp, "%d", &nCursos);
 
     // Inicia a leitura do Arquivo de Cursos
-    printf("Lendo lista de cursos.\n");
-    printf("Lendo lista de cursos..\n");
     printf("Lendo lista de cursos...\n");
     for(i=0;i<nCursos;i++){
 
@@ -53,7 +51,7 @@ int lerCursos(tCurso curso[])
     }
 
     // Informa o Sucesso ao importar todos os cursos
-    printf("Sucesso ao importar cursos!\n\n");
+    printf("Sucesso ao importar %d cursos!\n\n", nCursos);
 
     // Fecha o Arquivo
     fclose(ifp);
