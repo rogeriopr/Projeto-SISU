@@ -1,3 +1,13 @@
+/*
+   Nome da função: aprovadosGrupo
+   Objetivos: Imprimir os aprovados separados por grupos
+   Parâmetros Formais:
+       -match[]: Vetor com os aprovados (Entrada de dados)
+       -candidato[]: Vetor com os dados dos candidatos (Entrada de dados)
+       -curso[]: Vetor com os dados dos cursos (Entrada de dados)
+       -nMatch: Número de aprovados (Entrada de dados)
+   Retorno: Nenhum (procedimento)
+*/
 void aprovadosGrupo(tMatch match[],int nMatch,tCandidato candidato[],tCurso curso[],int nCursos){
         //declaraçao das variaveis locais
         //i = numero do candidato na lista match, j = id do curso, k = contador de alunos na lista de aprovados de cada curso, c = grupo
