@@ -7,11 +7,11 @@ Fisica_-_Araras 6 4 6 4 20 1 2 2 2 2
 Quimica_-_Araras  6 4 6 4 20 1 2 2 2 2 
 Engenharia_Agronomica_-_Lagoa_do_Sino 8 5 7 5 25 1 2 2 2 2 
 Engenharia_Ambiental_-_Lagoa_do_Sino 8 5 7 5 25 1 2 2 2 2 
-Engenharia_de_alimentos_-_Lagoa_do_Sino 8 5 7 5 25 1 2 2 2 2 
+Engenharia_de_Alimentos_-_Lagoa_do_Sino 8 5 7 5 25 1 2 2 2 2 
 Administracao_-_Sorocaba  9 6 9 6 30  1 2 2 1 2 
 Ciencia_da_Computacao_-_Sorocaba 9 6 9 6 30 1 2 2 1 2 
 Ciencias_Biologicas_-_Sorocaba 6 4 6 4 20 1 2 1 2 2  
-Ciencias_Econimcas_-_Sorocaba 9 6 9 6 30 2 2 2 1 2 
+Ciencias_Economicas_-_Sorocaba 9 6 9 6 30 2 2 2 1 2 
 Engenharia_de_Producao_-_Sorocaba   9 6 9 6 30  1 2 2 1 2 
 Engenharia_Florestal_-_Sorocaba 6 4 6 4 20 1 2 2 1 2 
 Fisica_-_Sorocaba 4 3 3 3 12 1 2 2 2 2 
@@ -32,7 +32,7 @@ Enfermagem_-_Sao_Carlos 5 3 4 3 15 1 2 1 2 2
 Engenharia_Civil_-_Sao_Carlos 13 7 13 7 40 1 2 2 2 1 
 Engenharia_de_Computacao_-_Sao_Carlos 5 3 4 3 15 1 2 2 1 2 
 Engenharia_de_Materiais_-_Sao_Carlos 13 7 13 7 40 1 1 2 2 1 
-Enhenharia_de_Producao_-_Sao_Carlos 16 9 16 9 50 1 2 2 1 1  
+Engenharia_de_Producao_-_Sao_Carlos 16 9 16 9 50 1 2 2 1 1  
 Engenharia_Eletrica_-_Sao_Carlos 9 6 9 6 30 1 2 2 1 1 
 Engenharia_Fisica_-_Sao_Carlos 6 4 6 4 20 1 1 2 2 1 
 Engenharia_Mecanica_-_Sao_Carlos 9 6 9 6 30 1 2 2 1 1 
