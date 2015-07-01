@@ -25,6 +25,7 @@ Data: 01/07/2015
 #include "aprovadosTodos.c"
 #include "procuraCandidatos.c"
 #include "procuraCurso.c"
+#include "mostraCursoGrupo.c"
 #include "menuResultados.c"
 
 ///Função Principal
