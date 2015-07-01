@@ -27,10 +27,14 @@ void procuraCandidatos(tCandidato candidato[],int nCandidatos,tCurso curso[])
 
     printf("Nome do Candidato: ");
     fflush(stdin);
-    gets(nome);
+    while(strlen(gets(nome))<3)
+    {
+        system("cls");
+        printf("Digite pelo menos 3 caracteres!\n\nNome do Candidato: ");
+    }
     toUpperStr(nome);
 
-    printf("\n-----------\n");
+    system("cls");
 
     for(i=0;i<nCandidatos;i++) {
         toUpperStr(candidato[i].nome);
@@ -52,7 +56,7 @@ void procuraCandidatos(tCandidato candidato[],int nCandidatos,tCurso curso[])
             {
                 printf("Candidato nao aprovado na 2. Opcao\n");
             }
-            printf("-----------\n");
+            printf("---------------------------------------------------------------------\n");
         }
     }
 
