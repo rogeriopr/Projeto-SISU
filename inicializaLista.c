@@ -13,9 +13,7 @@ int inicializaLista(tMatch match[], int nSelecionados[MAX_CURSOS][N_GRUPOS],tCan
 {
     int i,j; //contadores de laço
     // inializacao do vetor lista com cada candidato tendo a variavel inicializada
-    printf("Lendo lista de candidatos.\n");
-    printf("Lendo lista de candidatos..\n");
-    printf("Lendo lista de candidatos...\n");
+    printf("Inicializando lista de classificacao...\n");
     for(i=0;i<MAX_CANDIDATOS;i++)
     {
         match[i].media=0;
@@ -50,6 +48,6 @@ int inicializaLista(tMatch match[], int nSelecionados[MAX_CURSOS][N_GRUPOS],tCan
         }
     }
 
-    printf("Sucesso ao importar lista de candidatos!!\n\n");
+    printf("Lista inicializada!!\n\n");
     return j;//retorna quantos foram colocados na lista
 }
